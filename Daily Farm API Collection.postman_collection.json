@@ -212,7 +212,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl}}/farmer/"
+						"url": "{{baseUrl}}/farmer/edit"
 					},
 					"response": [
 						{
@@ -373,7 +373,13 @@
 					"name": "Refresh Farmer Token",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-refresh-token",
+								"value": "{{refreshToken}}",
+								"type": "text"
+							}
+						],
 						"url": "{{baseUrl}}/farmer/refresh"
 					},
 					"response": []

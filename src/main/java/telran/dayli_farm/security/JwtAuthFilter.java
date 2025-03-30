@@ -19,6 +19,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import telran.dayli_farm.security.login.LoginRoleContext;
 import telran.dayli_farm.security.service.RevokedTokenService;
 
 @RequiredArgsConstructor
@@ -32,53 +33,58 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 
-		String requestURI = request.getRequestURI();
-		log.info("OncePerRequestFilter. requestURI" + requestURI);
-		if (requestURI.equals(FARMER_REFRESH_TOKEN) 
-				
-				|| requestURI.equals(RESET_PASSWORD)
-				|| requestURI.equals(FARMER_REGISTER)
-				||requestURI.equals(FARMER_REFRESH_TOKEN)
-				|| requestURI.equals(CUSTOMER_REFRESH_TOKEN)
-				|| requestURI.equals(CUSTOMER_REGISTER)
-				|| requestURI.equals(CUSTOMER_LOGIN)
-				|| requestURI.equals(CUSTOMER_REGISTER)
-				|| requestURI.equals(CUSTOMER_LOGIN)
-				|| requestURI.startsWith("/paypal")
-				|| requestURI.equals("/swagger-ui.html") 
-				|| requestURI.startsWith("/swagger") 
-				|| requestURI.startsWith("/v3")) {
-			log.info("OncePerRequestFilter. Request does not need token");
-			filterChain.doFilter(request, response);
-			return;
-		}
-		
-		String token = getTokenFromRequest(request);
+		try {
+	        String requestURI = request.getRequestURI();
+	        log.info("OncePerRequestFilter. requestURI" + requestURI);
 
-		if (token == null || revokedTokenService.isRevorkedToken(token) || !jwtService.validateToken(token)) {
-			filterChain.doFilter(request, response);
-			return;
-		}
+	        if (requestURI.equals(FARMER_REFRESH_TOKEN)
+	                || requestURI.equals(RESET_PASSWORD)
+	                || requestURI.equals(FARMER_REGISTER)
+	                || requestURI.equals(CUSTOMER_REFRESH_TOKEN)
+	                || requestURI.equals(CUSTOMER_REGISTER)
+	                || requestURI.equals(CUSTOMER_LOGIN)
+	                || requestURI.startsWith("/paypal")
+	                || requestURI.equals("/swagger-ui.html")
+	                || requestURI.startsWith("/swagger")
+	                || requestURI.startsWith("/v3")) {
+	            log.info("OncePerRequestFilter. Request does not need token");
+	            filterChain.doFilter(request, response);
+	            return;
+	        }
 
-		String email = jwtService.extractEmail(token);
-		String role = jwtService.extractRole(token);
+	        String token = getTokenFromRequest(request);
 
-		        
-		if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-			UserDetails userDetails = userDetailsService.loadUserByUsername(email);
+	        if (token == null || revokedTokenService.isRevorkedToken(token) || !jwtService.validateToken(token)) {
+	            filterChain.doFilter(request, response);
+	            return;
+	        }
 
-			if (jwtService.validateToken(token)) {
-				Collection<SimpleGrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));
+	        String email = jwtService.extractEmail(token);
+	        String role = jwtService.extractRole(token);
+	        log.info("🔐 [JwtAuthFilter] - Extracted role from token: {}", role);
+	        LoginRoleContext.setRole(role);
 
-				UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-						userDetails, null, authorities);
+	        if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+	            UserDetails userDetails = userDetailsService.loadUserByUsername(email);
 
-				SecurityContextHolder.getContext().setAuthentication(authToken);
-			}
-		}
+	            if (jwtService.validateToken(token)) {
+	                Collection<SimpleGrantedAuthority> authorities = List.of(new SimpleGrantedAuthority("ROLE_" + role));
 
-		filterChain.doFilter(request, response);
+	                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+	                        userDetails, null, authorities);
+
+	                SecurityContextHolder.getContext().setAuthentication(authToken);
+	                log.info("✅ [JwtAuthFilter] - Authentication set for user: {} with role: {}", email, role);
+	            }
+	        }
+
+	        filterChain.doFilter(request, response);
+
+	    } finally {
+	        LoginRoleContext.clear(); // clean ThreadLocal
+	    }
 	}
+	
 
 	private String getTokenFromRequest(HttpServletRequest request) {
 		String header = request.getHeader("Authorization");

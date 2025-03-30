@@ -1,7 +1,7 @@
 package telran.dayli_farm.surprise_bag.dto;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -24,9 +24,9 @@ public class SurprisebagResponseDto {
 
 	UUID id;
 
-	List<Size> size;
-	
-	List<Category> category;
+	Set<Size> size;
+
+	Set<Category> category;
 
 	String description;
 
@@ -39,19 +39,18 @@ public class SurprisebagResponseDto {
 
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	LocalDateTime pickupTimeEnd;
-	
+
 	public static SurprisebagResponseDto of(SurpriseBag sb) {
-	 	return SurprisebagResponseDto.builder()
-	            .id(sb.getId())
-	            .description(sb.getDescription())
-	            .price(sb.getPrice())
-	            .availibleCount(sb.getAvailableCount())
-	            .category(sb.getCategory())
-	            .size(sb.getSize())
-	            .pickupTimeStart(sb.getPickupTimeStart())
-	            .pickupTimeEnd(sb.getPickupTimeEnd())
-	            .build();
+		return SurprisebagResponseDto.builder()
+				.id(sb.getId())
+				.description(sb.getDescription())
+				.price(sb.getPrice())
+				.availibleCount(sb.getAvailableCount())
+				.category(sb.getCategory())
+				.size(sb.getSize())
+				.pickupTimeStart(sb.getPickupTimeStart())
+				.pickupTimeEnd(sb.getPickupTimeEnd())
+				.build();
 	}
-	
-	
+
 }

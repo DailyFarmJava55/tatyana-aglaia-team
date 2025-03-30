@@ -16,9 +16,10 @@ public interface CustomerCredentialRepository extends JpaRepository<CustomerCred
 
 	CustomerCredential findByCustomer(Customer customer);
 	
-	@Query("SELECT c FROM CustomerCredential c JOIN c.customer cu WHERE cu.email = :email")
+	@Query("SELECT c FROM CustomerCredential c JOIN  c.customer cu WHERE cu.email = :email")
     Optional<CustomerCredential> findByCustomerEmail(@Param("email") String email);
 
+	
 
 
 }

@@ -1,7 +1,6 @@
 package telran.dayli_farm.security;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,6 +18,7 @@ import telran.dayli_farm.farmer.dao.FarmerCredentialRepository;
 import telran.dayli_farm.farmer.dao.FarmerRepository;
 import telran.dayli_farm.farmer.entity.Farmer;
 import telran.dayli_farm.farmer.entity.FarmerCredential;
+import telran.dayli_farm.security.login.LoginRoleContext;
 
 @Service
 @Slf4j
@@ -32,26 +32,34 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		Optional<Customer> customerOptional = customerRepo.findByEmail(email);
+	    String role = LoginRoleContext.getRole();
 
-		if (customerOptional.isPresent()) {
-			Customer customer = customerOptional.get();
-			CustomerCredential customerCredential = customerCredentialRepo.findByCustomer(customer);
+	    if ("CUSTOMER".equals(role)) {
+	        Customer customer = customerRepo.findByEmail(email)
+	                .orElseThrow(() -> new UsernameNotFoundException("Customer not found: " + email));
+	        CustomerCredential credential = customerCredentialRepo.findByCustomer(customer);
 
-			return new CustomUserDetails(customer.getEmail(), customerCredential.getHashedPassword(),
-					List.of(new SimpleGrantedAuthority("ROLE_CUSTOMER")), customer.getId());
-		}
+	        return new CustomUserDetails(
+	                customer.getEmail(),
+	                credential.getHashedPassword(),
+	                List.of(new SimpleGrantedAuthority("ROLE_CUSTOMER")),
+	                customer.getId()
+	        );
+	    }
 
-		Optional<Farmer> farmerOptional = farmerRepo.findByEmail(email);
+	    if ("FARMER".equals(role)) {
+	        Farmer farmer = farmerRepo.findByEmail(email)
+	                .orElseThrow(() -> new UsernameNotFoundException("Farmer not found: " + email));
+	        FarmerCredential credential = farmerCredentialRepo.findByFarmer(farmer);
 
-		if (farmerOptional.isPresent()) {
-			Farmer farmer = farmerOptional.get();
-			FarmerCredential farmerCredential = farmerCredentialRepo.findByFarmer(farmer);
+	        return new CustomUserDetails(
+	                farmer.getEmail(),
+	                credential.getHashedPassword(),
+	                List.of(new SimpleGrantedAuthority("ROLE_FARMER")),
+	                farmer.getId()
+	        );
+	    }
 
-			return new CustomUserDetails(farmer.getEmail(), farmerCredential.getHashedPassword(),
-					List.of(new SimpleGrantedAuthority("ROLE_FARMER")), farmer.getId());
-		}
-
-		throw new UsernameNotFoundException("User not found");
+	    throw new UsernameNotFoundException("Unknown login role or user not found: " + email);
 	}
 }

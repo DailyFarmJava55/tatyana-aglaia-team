@@ -16,6 +16,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import lombok.RequiredArgsConstructor;
+import telran.dayli_farm.security.login.LoginRoleFilter;
 import telran.dayli_farm.security.service.RevokedTokenService;
 
 @Configuration
@@ -24,6 +25,8 @@ public class SecurityConfig {
 	private final JwtService jwtService;
 	private final UserDetailsService userDetailsService;
 	private final RevokedTokenService revokedTokenService;
+	private final LoginRoleFilter loginRoleFilter;
+
 
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -39,8 +42,9 @@ public class SecurityConfig {
 						.requestMatchers("/customer/**").hasRole("CUSTOMER")
 						.anyRequest().authenticated())
 						
+				.addFilterBefore(loginRoleFilter, UsernamePasswordAuthenticationFilter.class)
 				.addFilterBefore(new JwtAuthFilter(jwtService, userDetailsService, revokedTokenService),
-						UsernamePasswordAuthenticationFilter.class);
+					UsernamePasswordAuthenticationFilter.class);
 
 		return http.build();
 	}

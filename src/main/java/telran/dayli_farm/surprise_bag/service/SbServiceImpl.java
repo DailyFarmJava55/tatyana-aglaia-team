@@ -39,10 +39,14 @@ public class SbServiceImpl implements ISbService {
 		Farmer farmer = farmerRepository.findById(farmerId)
 				.orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, FARMER_NOT_FOUND));
 
-		SurpriseBag sb = SurpriseBag.builder().availableCount(surpriseBagDto.getAvailableCount())
-				.description(surpriseBagDto.getDescription()).price(surpriseBagDto.getPrice()).farmer(farmer)
-				.category(surpriseBagDto.getCategories()).size(surpriseBagDto.getSize())
-				.pickupTimeStart(surpriseBagDto.getPickupTimeStart()).pickupTimeEnd(surpriseBagDto.getPickupTimeEnd())
+		SurpriseBag sb = SurpriseBag.builder()
+				.availableCount(surpriseBagDto.getAvailableCount())
+				.description(surpriseBagDto.getDescription())
+				.price(surpriseBagDto.getPrice()).farmer(farmer)
+				.category(surpriseBagDto.getCategories())
+				.size(surpriseBagDto.getSize())
+				.pickupTimeStart(surpriseBagDto.getPickupTimeStart())
+				.pickupTimeEnd(surpriseBagDto.getPickupTimeEnd())
 				.isAvailable(surpriseBagDto.getAvailableCount() > 0).build();
 
 		sbRepository.save(sb);

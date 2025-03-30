@@ -1,7 +1,7 @@
 package telran.dayli_farm.surprise_bag.dto;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -26,9 +26,9 @@ public class SurprisebagDto {
 	private String description;
 	
 	@NotNull(message = "Categories must be specified")
-	List<Category> categories;
+	Set<Category> categories;
 	
-	private List<Size> size;
+	private Set<Size> size;
 	
 	@Min(value = 1, message = "Quantity must be at least 1")
 	int availableCount;

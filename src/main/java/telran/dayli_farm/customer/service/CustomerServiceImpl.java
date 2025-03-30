@@ -71,7 +71,7 @@ public class CustomerServiceImpl implements ICustomerService {
 		String email = loginRequestDto.getEmail();
 		String password = loginRequestDto.getPassword();
 
-		TokenResponseDto tokens = authService.authenticate(email, password);
+		TokenResponseDto tokens = authService.authenticateCustomer(email, password);
 
 		return ResponseEntity.ok(tokens);
 	}
@@ -139,7 +139,7 @@ public class CustomerServiceImpl implements ICustomerService {
 		credential.setHashedPassword(passwordEncoder.encode(changePasswordDto.getNewPassword()));
 		credential.setPasswordLastUpdated(LocalDateTime.now());
 
-		TokenResponseDto tokens = authService.authenticate(customer.getEmail(), changePasswordDto.getNewPassword());
+		TokenResponseDto tokens = authService.authenticateCustomer(customer.getEmail(), changePasswordDto.getNewPassword());
 
 		return ResponseEntity.ok(tokens);
 	}

@@ -1,7 +1,7 @@
 package telran.dayli_farm.surprise_bag.model;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import jakarta.persistence.CollectionTable;
@@ -60,17 +60,20 @@ public class SurpriseBag {
 	@JoinColumn(name = "farmer_id", nullable = false)
 	Farmer farmer;
 
+	/**
+	 * 
+	 */
 	@ElementCollection(fetch = FetchType.LAZY, targetClass = Size.class)
 	@Enumerated(EnumType.STRING)
 	@CollectionTable(name = "surprise_bag_sizes", joinColumns = @JoinColumn(name = "surprise_bag_id"))
 	@Column(name = "size", nullable = false)
-	private List<Size> size;
+	private Set<Size> size;
 
 	@ElementCollection(fetch = FetchType.LAZY, targetClass = Category.class)
 	@Enumerated(EnumType.STRING)
 	@CollectionTable(name = "surprise_bag_categories", joinColumns = @JoinColumn(name = "surprise_bag_id"))
 	@Column(name = "category", nullable = false)
-	private List<Category> category;
+	private Set<Category> category;
 
 	public SurpriseBag(UUID id) {
 		this.id = id;

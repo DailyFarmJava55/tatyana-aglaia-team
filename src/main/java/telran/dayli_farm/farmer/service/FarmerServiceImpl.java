@@ -80,7 +80,7 @@ public class FarmerServiceImpl implements IFarmerService {
 		String email = loginRequestDto.getEmail();
 		String password = loginRequestDto.getPassword();
 
-		TokenResponseDto tokens = authService.authenticate(email, password);
+		TokenResponseDto tokens = authService.authenticateFarmer(email, password);
 
 		return ResponseEntity.ok(tokens);
 	}
@@ -138,7 +138,7 @@ public class FarmerServiceImpl implements IFarmerService {
 		credential.setHashedPassword(passwordEncoder.encode(changePasswordDto.getNewPassword()));
 		credential.setPasswordLastUpdated(LocalDateTime.now());
 
-		TokenResponseDto tokens = authService.authenticate(farmer.getEmail(), changePasswordDto.getNewPassword());
+		TokenResponseDto tokens = authService.authenticateFarmer(farmer.getEmail(), changePasswordDto.getNewPassword());
 
 		return ResponseEntity.ok(tokens);
 	}

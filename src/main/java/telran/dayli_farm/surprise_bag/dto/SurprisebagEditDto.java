@@ -1,7 +1,7 @@
 package telran.dayli_farm.surprise_bag.dto;
 
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -13,12 +13,12 @@ import telran.dayli_farm.surprise_bag.model.Size;
 
 @Data
 @Builder
-public class SurprisebagEditDto {
+	public class SurprisebagEditDto {
 	private String description;
 
-	List<Category> categories;
+	Set<Category> categories;
 
-	private List<Size> size;
+	private Set<Size> size;
 
 	int availableCount;
 
