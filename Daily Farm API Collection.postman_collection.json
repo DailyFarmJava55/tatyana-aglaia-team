@@ -14,18 +14,174 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"SecurePassword123\",\r\n    \"farmName\": \"Green Farm\",\r\n    \"coordinates\": {\r\n        \"latitude\": 32.0853,\r\n        \"longitude\": 34.7818\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseUrl}}/farmer/register"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Register Farmer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"SecurePassword123\",\r\n    \"farmName\": \"Green Farm\",\r\n    \"coordinates\": {\r\n        \"latitude\": 32.0853,\r\n        \"longitude\": 34.7818\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/farmer/register"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 13:02:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"5ff8e789-b0b0-4764-8433-4350124e1fee\",\n    \"email\": \"user@example.com\",\n    \"farmName\": \"Green Farm\",\n    \"phone\": \"+1234567890\",\n    \"coordinates\": {\n        \"latitude\": 32.0853,\n        \"longitude\": 34.7818\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Login Farmer",
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"SecurePassword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseUrl}}/farmer/login"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Login Farmer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"SecurePassword123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/farmer/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 12:29:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlNDJlNjBlMS01NmRiLTQ4NjktODg2MS0wOWU5ZTY0ZjAwZjYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDI3MzI5NDYsImV4cCI6MTc0MjczMzU0Nn0.QUD8dP7TAudMb-CHglSgOP-nfXW7XZXrteIaUI6yya8\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlNDJlNjBlMS01NmRiLTQ4NjktODg2MS0wOWU5ZTY0ZjAwZjYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDI3MzI5NDYsImV4cCI6MTc0MzMzNzc0Nn0.B4on31gdEztNSuYK54I7eN2Yj-p9ecxx5KsBVuMfaNo\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Logout Farmer",
@@ -39,17 +195,116 @@
 				{
 					"name": "Edit Farmer",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"user@example.com\",\r\n     \"coordinates\": {\r\n        \"latitude\": 32.0853,\r\n        \"longitude\": 34.7818\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseUrl}}/farmer/"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Edit Farmer",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"user@example.com\",\r\n     \"coordinates\": {\r\n        \"latitude\": 32.0853,\r\n        \"longitude\": 34.7818\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/farmer/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 12:50:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"cef5afd1-df32-4a7b-96bf-84ce27bc6d00\",\n    \"email\": \"user@example.com\",\n    \"farmName\": \"Green Farm\",\n    \"phone\": \"+1234567890\",\n    \"coordinates\": {\n        \"latitude\": 32.0853,\n        \"longitude\": 34.7818\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Change Farmer Password",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"SecurePassword123\",\r\n    \"newPassword\": \"NewSecurePassword123\"\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseUrl}}/farmer/password"
 					},
 					"response": []
@@ -102,9 +357,15 @@
 				{
 					"name": "Remove Farmer",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseUrl}}/farmer/"
+						"url": "{{baseUrl}}/farmer/remove"
 					},
 					"response": []
 				},
@@ -148,74 +409,6 @@
 						"url": "{{baseUrl}}/customer/register"
 					},
 					"response": [
-						{
-							"name": "Register Customer",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"SecurePassword123\",\r\n    \"city\": \"Tel Aviv\",\r\n    \"coordinates\": {\r\n        \"latitude\": 32.0853,\r\n        \"longitude\": 34.7818\r\n    },\r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Petrov\" \r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "{{baseUrl}}/customer/register"
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "0"
-								},
-								{
-									"key": "Cache-Control",
-									"value": "no-cache, no-store, max-age=0, must-revalidate"
-								},
-								{
-									"key": "Pragma",
-									"value": "no-cache"
-								},
-								{
-									"key": "Expires",
-									"value": "0"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								},
-								{
-									"key": "Transfer-Encoding",
-									"value": "chunked"
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 20 Mar 2025 11:19:38 GMT"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=60"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"phone\": \"+1234567890\",\n    \"email\": \"user@example.com\",\n    \"password\": \"SecurePassword123\",\n    \"city\": \"Tel Aviv\",\n    \"coordinates\": {\n        \"latitude\": 32.0853,\n        \"longitude\": 34.7818\n    },\n    \"firstName\": \"Peter\",\n    \"lastName\": \"Petrov\"\n}"
-						},
 						{
 							"name": "Register Customer",
 							"originalRequest": {
@@ -283,6 +476,142 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"timestamp\": \"2025-03-20T14:52:56.918+00:00\",\n    \"status\": 409,\n    \"error\": \"Conflict\",\n    \"path\": \"/customer/register\"\n}"
+						},
+						{
+							"name": "Register Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"user@example.com\",\r\n    \"password\": \"SecurePassword123\",\r\n    \"city\": \"Tel Aviv\",\r\n    \"coordinates\": {\r\n        \"latitude\": 32.0853,\r\n        \"longitude\": 34.7818\r\n    },\r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Petrov\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/customer/register"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Mar 2025 17:20:38 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6fbaf59f-cf8c-47f0-bc09-7f127066dea9\",\n    \"email\": \"user@example.com\",\n    \"firstName\": \"Peter\",\n    \"lastName\": \"Petrov\",\n    \"phone\": \"+1234567890\",\n    \"city\": \"Tel Aviv\"\n}"
+						},
+						{
+							"name": "Register Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"user2@example.com\",\r\n    \"password\": \"SecurePassword123\",\r\n    \"city\": \"Tel Aviv\",\r\n    \"coordinates\": {\r\n        \"latitude\": 32.0853,\r\n        \"longitude\": 34.7818\r\n    },\r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Petrov\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/customer/register"
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Mar 2025 13:05:37 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Customer with this email exists"
 						}
 					]
 				},
@@ -370,32 +699,323 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZjFiNGM4OS0wYzU3LTQ5MmEtYmVhZC1hMGZkZGFlZGE4OTYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDI0ODA1MzcsImV4cCI6MTc0MjQ4MTEzN30.abb-kEMocDu6SdLlzNwiwdF8N7A-dBmrXF4zTZx58KM\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlZjFiNGM4OS0wYzU3LTQ5MmEtYmVhZC1hMGZkZGFlZGE4OTYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDI0ODA1MzcsImV4cCI6MTc0MzA4NTMzN30.Qj1U3doze9yR4CVK0zMEuUicv8U80HxfMN6oTdajJUU\"\n}"
+						},
+						{
+							"name": "Login Customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"userEdit@example.com\",\r\n    \"password\": \"SecurePassword123\"  \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/customer/login"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Mar 2025 17:09:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2025-03-22T17:09:03.368+00:00\",\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"message\": \"Customer with this email is not exists\",\n    \"path\": \"/customer/login\"\n}"
 						}
 					]
 				},
 				{
 					"name": "Logout Customer",
 					"request": {
-						"method": "POST",
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
 						"header": [],
 						"url": "{{baseUrl}}/customer/logout"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Logout Customer",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseUrl}}/customer/logout"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "17"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Mar 2025 16:28:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Logout successful"
+						}
+					]
 				},
 				{
 					"name": "Edit Customer",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "PUT",
 						"header": [],
-						"url": "{{baseUrl}}/customer/"
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"userEdit@example.com\",\r\n    \"password\": \"SecurePassword123\",\r\n    \"city\": \"Tel Aviv\",\r\n    \r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Petrov\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/customer/edit"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Edit Customer",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"userEdit@example.com\",\r\n    \"password\": \"SecurePassword123\",\r\n    \"city\": \"Tel Aviv\",\r\n    \"coordinates\": {\r\n        \"latitude\": 32.0853,\r\n        \"longitude\": 34.7818\r\n    },\r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Petrov\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/customer/"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Mar 2025 17:21:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6fbaf59f-cf8c-47f0-bc09-7f127066dea9\",\n    \"email\": \"userEdit@example.com\",\n    \"firstName\": \"Peter\",\n    \"lastName\": \"Petrov\",\n    \"phone\": \"+1234567890\",\n    \"city\": \"Tel Aviv\"\n}"
+						},
+						{
+							"name": "Edit Customer",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"phone\": \"+1234567890\",\r\n    \"email\": \"userEdit@example.com\",\r\n    \"password\": \"SecurePassword123\",\r\n    \"city\": \"Tel Aviv\",\r\n    \r\n    \"firstName\": \"Peter\",\r\n    \"lastName\": \"Petrov\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/customer/edit"
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Mar 2025 16:34:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2025-03-26T16:34:46.013+00:00\",\n    \"status\": 500,\n    \"error\": \"Internal Server Error\",\n    \"message\": \"Cannot invoke \\\"telran.dayli_farm.security.CustomUserDetails.getId()\\\" because \\\"user\\\" is null\",\n    \"path\": \"/customer/edit\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Change Customer Password",
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\": \"SecurePassword123\",\r\n    \"newPassword\": \"NewSecurePassword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": "{{baseUrl}}/customer/password"
 					},
 					"response": []
@@ -430,20 +1050,158 @@
 				{
 					"name": "Remove Customer",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
 						"method": "DELETE",
 						"header": [],
-						"url": "{{baseUrl}}/customer/"
+						"url": "{{baseUrl}}/customer/remove"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Remove Customer",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseUrl}}/customer/remove"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 22 Mar 2025 10:22:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "User deleted successfully."
+						}
+					]
 				},
 				{
 					"name": "Refresh Customer Token",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-refresh-token",
+								"value": "{{refreshToken}}",
+								"type": "text"
+							}
+						],
 						"url": "{{baseUrl}}/customer/refresh"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Refresh Customer Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-refresh-token",
+										"value": "{{refreshToken}}",
+										"type": "text"
+									}
+								],
+								"url": "{{baseUrl}}/customer/refresh"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Mar 2025 08:58:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYjAxZjE2Ny02YzMyLTQ0ZjItYWM0Yy0wZDk0YTRjZmQyNGYiLCJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NDI3MjAzMTYsImV4cCI6MTc0MjcyMDkxNn0.Hzs6rm_EMstiRw3kLdyr3uZ8_VuUDqnm2tOZTRcKzUo\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Reset Customer Password",
@@ -460,7 +1218,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlcjIyMUBtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzQyMjE4OTI2LCJleHAiOjE3NDIyMTk1MjZ9.OHBmkAHEma5g5D98zuiyDbFfY7Jd06P7XCmYHCFpDO0"
+								"token": "{{token}}"
 							}
 						},
 						"method": "GET",
@@ -526,6 +1284,744 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"id\": \"5f128048-3618-4e75-816b-ee826f5fd0cd\",\n    \"email\": \"user@example.com\",\n    \"firstName\": \"Peter\",\n    \"lastName\": \"Petrov\",\n    \"phone\": \"+1234567890\",\n    \"city\": \"Tel Aviv\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Surprise Bag",
+			"item": [
+				{
+					"name": "Add SurpriseBag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Fresh vegetable surprise bag\",\n    \"categories\": [\n        \"BAKERY\",\n        \"HERBS_AND_GREENS\"\n    ],\n    \"size\": [\n        \"SMALL\",\n        \"MEDIUM\"\n    ],\n    \"availableCount\": 10,\n    \"price\": 15.99,\n    \"pickupTimeStart\": \"2025-03-25 08:00\",\n    \"pickupTimeEnd\": \"2025-03-25 10:00\"\n}"
+						},
+						"url": "{{baseUrl}}/farmer/sb"
+					},
+					"response": [
+						{
+							"name": "Add SurpriseBag",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"Fresh vegetable surprise bag\",\n    \"categories\": [\n        \"BAKERY\",\n        \"HERBS_AND_GREENS\"\n    ],\n    \"size\": [\n        \"SMALL\",\n        \"MEDIUM\"\n    ],\n    \"availableCount\": 10,\n    \"price\": 15.99,\n    \"pickupTimeStart\": \"2025-03-25 08:00\",\n    \"pickupTimeEnd\": \"2025-03-25 10:00\"\n}"
+								},
+								"url": "{{baseUrl}}/farmer/sb"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Mar 2025 11:13:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"fab3a45b-4223-443f-adfc-a1a95b42d23a\",\n    \"size\": [\n        \"SMALL\",\n        \"MEDIUM\"\n    ],\n    \"category\": [\n        \"BAKERY\",\n        \"HERBS_AND_GREENS\"\n    ],\n    \"description\": \"Fresh vegetable surprise bag\",\n    \"price\": 15.99,\n    \"availibleCount\": 10,\n    \"pickupTimeStart\": \"2025-03-25 08:00\",\n    \"pickupTimeEnd\": \"2025-03-25 10:00\"\n}"
+						},
+						{
+							"name": "Add SurpriseBag",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"Fresh vegetable surprise bag\",\n    \"categories\": [\n        \"BAKERY\"\n    ],\n    \"size\": [\n        \"SMALL\"\n    ],\n    \"availableCount\": 10,\n    \"price\": 15.99,\n    \"pickupTimeStart\": \"2025-03-25 08:00\",\n    \"pickupTimeEnd\": \"2025-03-25 10:00\"\n}"
+								},
+								"url": "{{baseUrl}}/farmer/sb"
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Mar 2025 11:14:33 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"5897bd03-fe42-46fb-9077-122ec84ad20d\",\n    \"size\": [\n        \"SMALL\"\n    ],\n    \"category\": [\n        \"BAKERY\"\n    ],\n    \"description\": \"Fresh vegetable surprise bag\",\n    \"price\": 15.99,\n    \"availibleCount\": 10,\n    \"pickupTimeStart\": \"2025-03-25 08:00\",\n    \"pickupTimeEnd\": \"2025-03-25 10:00\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All SurpriseBags For Farmer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/farmer/sb"
+					},
+					"response": [
+						{
+							"name": "Get All SurpriseBags By Farmer",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/farmer/sb"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Mar 2025 11:15:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"fab3a45b-4223-443f-adfc-a1a95b42d23a\",\n        \"size\": [\n            \"SMALL\",\n            \"MEDIUM\"\n        ],\n        \"category\": [\n            \"BAKERY\",\n            \"HERBS_AND_GREENS\"\n        ],\n        \"description\": \"Fresh vegetable surprise bag\",\n        \"price\": 15.99,\n        \"availibleCount\": 10,\n        \"pickupTimeStart\": \"2025-03-25 08:00\",\n        \"pickupTimeEnd\": \"2025-03-25 10:00\"\n    },\n    {\n        \"id\": \"5897bd03-fe42-46fb-9077-122ec84ad20d\",\n        \"size\": [\n            \"SMALL\"\n        ],\n        \"category\": [\n            \"BAKERY\"\n        ],\n        \"description\": \"Fresh vegetable surprise bag\",\n        \"price\": 15.99,\n        \"availibleCount\": 10,\n        \"pickupTimeStart\": \"2025-03-25 08:00\",\n        \"pickupTimeEnd\": \"2025-03-25 10:00\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get All SurpriseBags",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/sb"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All SurpriseBags By Size",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/sb/size?size=SMALL",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sb",
+								"size"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "SMALL"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All SurpriseBags By Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/sb/category?category=VEGETABLES",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sb",
+								"category"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "VEGETABLES"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sizes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/sizes"
+					},
+					"response": []
+				},
+				{
+					"name": "Update SurpriseBag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Fresh vegetable surprise bag\",\r\n    \r\n    \"size\": [\r\n        \"SMALL\"\r\n        \r\n    ],\r\n    \"availableCount\": 7,\r\n    \"price\": 10.5,\r\n    \"pickupTimeStart\": \"2025-03-25 08:00\",\r\n    \"pickupTimeEnd\": \"2025-03-25 10:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/farmer/sb/{{bagId}}"
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Fresh vegetable surprise bag\",\r\n    \"categories\": [\r\n        \"BAKERY\"\r\n       \r\n    ],\r\n    \"size\": [\r\n        \"SMALL\",\r\n        \"MEDIUM\"\r\n    ],\r\n    \"availableCount\": 7,\r\n    \"price\": 10.5,\r\n    \"pickupTimeStart\": \"2025-03-25 08:00\",\r\n    \"pickupTimeEnd\": \"2025-03-25 10:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/farmer/sb/{{bagId}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Mar 2025 14:08:40 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"dc1f1a89-f4b1-4c3e-8267-e2ab9b81d81d\",\n    \"size\": [\n        \"SMALL\",\n        \"MEDIUM\"\n    ],\n    \"category\": [\n        \"BAKERY\"\n    ],\n    \"description\": \"Fresh vegetable surprise bag\",\n    \"price\": 10.5,\n    \"availibleCount\": 7,\n    \"pickupTimeStart\": \"2025-03-25 08:00\",\n    \"pickupTimeEnd\": \"2025-03-25 10:00\"\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"Fresh vegetable surprise bag\",\r\n    \r\n    \"size\": [\r\n        \"SMALL\"\r\n        \r\n    ],\r\n    \"availableCount\": 7,\r\n    \"price\": 10.5,\r\n    \"pickupTimeStart\": \"2025-03-25 08:00\",\r\n    \"pickupTimeEnd\": \"2025-03-25 10:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/farmer/sb/{{bagId}}"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Mar 2025 14:23:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"timestamp\": \"2025-03-24T14:23:45.205+00:00\",\n    \"status\": 403,\n    \"error\": \"Forbidden\",\n    \"message\": \"You are not allowed to update this Surprise Bag\",\n    \"path\": \"/farmer/sb/4f358f24-a27c-4961-b0cf-49b04fa2f36d\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete SurpriseBag",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/farmer/sb/{{bagId}}"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All SurpriseBags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{baseUrl}}/sb"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerId\":\"684e9827-ec68-4d17-a33a-117c67d0de03\",\r\n    \"surpriseBagId\":\"02ab14cc-6259-45f4-bee4-2a594a8a1be0\",\r\n    \"quantity\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/customer/order"
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerId\":\"684e9827-ec68-4d17-a33a-117c67d0de03\",\r\n    \"surpriseBagId\":\"02ab14cc-6259-45f4-bee4-2a594a8a1be0\",\r\n    \"quantity\":\"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/customer/order"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Mar 2025 12:45:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"totalPrice\": 31.98,\n    \"message\": \"Order Created!!!\",\n    \"status\": \"WAITING_FOR_PAYMENT\"\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerId\":\"684e9827-ec68-4d17-a33a-117c67d0de03\",\r\n    \"surpriseBagId\":\"02ab14cc-6259-45f4-bee4-2a594a8a1be0\",\r\n    \"quantity\":\"2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/customer/order"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Mar 2025 13:06:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "Surprise Bag is not available for purchase."
+						}
+					]
+				},
+				{
+					"name": "CANCEL order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "{{baseUrl}}/customer/order/{{orderId}}"
+					},
+					"response": [
+						{
+							"name": "CANCEL order",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{baseUrl}}/customer/order/{{orderId}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Mar 2025 14:45:53 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Order successfully deleted and Surprise Bag availability restored"
 						}
 					]
 				}
