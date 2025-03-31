@@ -4,7 +4,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
@@ -16,8 +15,7 @@ public interface CustomerCredentialRepository extends JpaRepository<CustomerCred
 
 	CustomerCredential findByCustomer(Customer customer);
 	
-	@Query("SELECT c FROM CustomerCredential c JOIN  c.customer cu WHERE cu.email = :email")
-    Optional<CustomerCredential> findByCustomerEmail(@Param("email") String email);
+	Optional<CustomerCredential> findByCustomerEmail(@Param("email") String email);
 
 	
 

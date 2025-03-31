@@ -13,6 +13,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import telran.dayli_farm.api.dto.token.RefreshTokenResponseDto;
@@ -42,6 +43,7 @@ public class AuthService {
     private final FarmerRepository farmerRepo;
     private final FarmerCredentialRepository farmerCredentialRepo;
 
+    @Transactional
     public TokenResponseDto authenticateCustomer(String email, String password) {
         Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(email, password));
@@ -50,10 +52,10 @@ public class AuthService {
         UUID userId = userDetails.getId();
         LocalDateTime now = LocalDateTime.now();
 
-        Customer customer = customerRepo.findByEmail(email)
+        CustomerCredential credential = customerCredentialRepo.findByCustomerEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Customer not found: " + email));
-
-        CustomerCredential credential = customerCredentialRepo.findByCustomer(customer);
+        
+      
         String refreshToken = jwtService.generateRefreshToken(userId, email);
         String accessToken = jwtService.generateAccessToken(userId, email, "CUSTOMER");
 
@@ -64,6 +66,7 @@ public class AuthService {
         return new TokenResponseDto(accessToken, refreshToken);
     }
 
+    @Transactional
     public TokenResponseDto authenticateFarmer(String email, String password) {
         Authentication authentication = authenticationManager
                 .authenticate(new UsernamePasswordAuthenticationToken(email, password));
@@ -72,10 +75,9 @@ public class AuthService {
         UUID userId = userDetails.getId();
         LocalDateTime now = LocalDateTime.now();
 
-        Farmer farmer = farmerRepo.findByEmail(email)
+        FarmerCredential credential = farmerCredentialRepo.findByFarmerEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Farmer not found: " + email));
-
-        FarmerCredential credential = farmerCredentialRepo.findByFarmer(farmer);
+        
         String refreshToken = jwtService.generateRefreshToken(userId, email);
         String accessToken = jwtService.generateAccessToken(userId, email, "FARMER");
 

@@ -20,12 +20,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import telran.dayli_farm.farmer.dto.FarmerRegisterDto;
 import telran.dayli_farm.surprise_bag.model.SurpriseBag;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString(exclude = "coordinates")
 @Getter
 @Setter
 @Builder
