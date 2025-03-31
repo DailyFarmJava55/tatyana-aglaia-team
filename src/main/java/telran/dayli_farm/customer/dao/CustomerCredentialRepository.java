@@ -17,6 +17,7 @@ public interface CustomerCredentialRepository extends JpaRepository<CustomerCred
 	
 	Optional<CustomerCredential> findByCustomerEmail(@Param("email") String email);
 
+	Optional<CustomerCredential> findByCustomerId(UUID id);
 	
 
 
