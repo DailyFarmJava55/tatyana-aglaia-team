@@ -84,7 +84,7 @@ public class SurpriseBag {
                 .id(sb.id)
                 .category(sb.category)
                 .size(sb.size)
-                .availibleCount(sb.availableCount)
+                .availableCount(sb.availableCount)
                 .description(sb.description)
                 .price(sb.price)
                 .pickupTimeStart(sb.pickupTimeStart)

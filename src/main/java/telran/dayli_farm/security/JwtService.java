@@ -18,7 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class JwtService {
-	@Value("${jwt.accessExpirationSec:600}") // 10 minutes
+	@Value("${jwt.accessExpirationSec:6000}") 
 	private int accessExpirationSec;
 
 	@Value("${jwt.refreshExpirationSec:604800}") // 7 days

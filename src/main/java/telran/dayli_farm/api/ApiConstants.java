@@ -39,13 +39,21 @@ public interface ApiConstants {
 	String CUSTOMER_RESET_PASSWORD = "/customer/password-reset";
 	
 	//SURPRISE_BAG
-    String ADD_SURPRISE_BAG = "/farmer/sb"; 
-    String GET_ALL_SURPRISE_BAGS = "/sb"; 
-    String UPDATE_SURPRISE_BAG = "/farmer/sb"; 
-    String GET_ALL_SURPRISE_BAGS_FOR_FARMER = "/farmer/sb"; 
-    String GET_ALL_SURPRISE_BAGS_BY_SIZE = "/sb/size";
-    String GET_ALL_SURPRISE_BAGS_BY_CATEGORY = "/sb/category";
-    String DELETE_SURPRISE_BAG = "/farmer/sb"; 
+	
+	String ADD_SURPRISE_BAG = "/surprise_bag";
+	String GET_ALL_SURPRISE_BAGS = "/surprise_bag/all"; 
+	String GET_ALL_SURPRISE_BAGS_FOR_FARMER = "/surprise_bag/farmer";
+	
+    String UPDATE_SURPRISE_BAG = "/surprise_bag"; 
+    String GET_ALL_SURPRISE_BAGS_BY_SIZE = "/surprise_bag/size";
+    String GET_ALL_SURPRISE_BAGS_BY_CATEGORY = "/surprise_bag/category";
+    String DELETE_SURPRISE_BAG = "/surprise_bag"; 
+    
+    String GET_SURPRISE_BAG_BY_ID = "/surprise_bag/{id}";
+    String SURPRISE_BAG_INC = "/surprise_bag/{id}/increment";
+    String SURPRISE_BAG_DEC = "/surprise_bag/{id}/decrement";
+    
+    
 
     String GET_CATEGORIES = "/categories";
     String GET_SIZES = "/sizes";

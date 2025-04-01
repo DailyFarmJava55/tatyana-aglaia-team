@@ -137,5 +137,35 @@ public class SbServiceImpl implements ISbService {
 		}
 		return owner.getEmail().equals(username);
 	}
+//***************************************************************************
+	 @Override
+	    public SurprisebagResponseDto getById(UUID id) {
+	        SurpriseBag sb = sbRepository.findById(id)
+	            .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "SurpriseBag not found"));
+	        return SurpriseBag.buildFromEntity(sb);
+	    }
+
+	 @Override
+	 @Transactional
+	 public void incrementAvailableCount(UUID id, int quantity) {
+	     SurpriseBag sb = sbRepository.findById(id)
+	         .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,  "SurpriseBag not found" ));
+	     sb.setAvailableCount(sb.getAvailableCount() + quantity);
+	     sbRepository.save(sb);
+	 }
+
+	@Override
+	@Transactional
+	public void decrementAvailableCount(UUID id, int quantity) {
+		SurpriseBag sb = sbRepository.findById(id)
+		        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,  "SurpriseBag not found" ));
+		    
+		if (sb.getAvailableCount() < quantity) {
+		        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No more surprise bags available");
+		    }
+
+		    sb.setAvailableCount(sb.getAvailableCount() - quantity);
+		    sbRepository.save(sb);
+		}
 
 }

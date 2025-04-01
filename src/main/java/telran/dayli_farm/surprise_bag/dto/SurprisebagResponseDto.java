@@ -32,7 +32,7 @@ public class SurprisebagResponseDto {
 
 	double price;
 
-	int availibleCount;
+	int availableCount;
 
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	LocalDateTime pickupTimeStart;
@@ -45,7 +45,7 @@ public class SurprisebagResponseDto {
 				.id(sb.getId())
 				.description(sb.getDescription())
 				.price(sb.getPrice())
-				.availibleCount(sb.getAvailableCount())
+				.availableCount(sb.getAvailableCount())
 				.category(sb.getCategory())
 				.size(sb.getSize())
 				.pickupTimeStart(sb.getPickupTimeStart())

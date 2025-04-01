@@ -25,4 +25,10 @@ public interface ISbService {
 
 	void deleteSurpriseBag(UUID bagId);
 
+	SurprisebagResponseDto getById(UUID id);
+
+	void incrementAvailableCount(UUID id, int quantity);
+
+	void decrementAvailableCount(UUID id, int quantity);
+
 }

@@ -4,6 +4,7 @@ import static telran.dayli_farm.api.ApiConstants.*;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -37,7 +38,8 @@ public class SecurityConfig {
 
 						.requestMatchers(FARMER_REGISTER, FARMER_LOGIN, FARMER_REFRESH_TOKEN,
 								CUSTOMER_REGISTER, CUSTOMER_LOGIN, CUSTOMER_REFRESH_TOKEN, GET_ALL_SURPRISE_BAGS,
-								"/swagger-ui/**", "/v3/**").permitAll()
+								"/swagger-ui/**", "/v3/**", "/surprise_bag/**", "/orders/**").permitAll()
+						.requestMatchers(HttpMethod.PUT, "/surprise_bag/*/decrement").permitAll()
 						.requestMatchers("/farmer/**").hasRole("FARMER")
 						.requestMatchers("/customer/**").hasRole("CUSTOMER")
 						.anyRequest().authenticated())
