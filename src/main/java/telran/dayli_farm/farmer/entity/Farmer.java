@@ -1,6 +1,5 @@
 package telran.dayli_farm.farmer.entity;
 
-import java.util.List;
 import java.util.UUID;
 
 import org.hibernate.annotations.UuidGenerator;
@@ -11,7 +10,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
@@ -22,7 +20,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import telran.dayli_farm.farmer.dto.FarmerRegisterDto;
-import telran.dayli_farm.surprise_bag.model.SurpriseBag;
 
 @Entity
 @NoArgsConstructor
@@ -54,8 +51,8 @@ public class Farmer {
 	@OneToOne(mappedBy = "farmer", cascade = jakarta.persistence.CascadeType.REMOVE, fetch = FetchType.LAZY)
     private FarmerCredential credential;
 	
-	@OneToMany(mappedBy = "farmer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	 private List<SurpriseBag> surpriseBags;
+//	@OneToMany(mappedBy = "farmer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//	 private List<SurpriseBag> surpriseBags;
 	
 	public Farmer(UUID id) { 
         this.id = id;
